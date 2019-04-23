@@ -4,6 +4,7 @@
 #include <windows.h>
 #include <shobjidl.h>
 #include <string>
+#include <set>
 
 class CoUninitializeOnExit {
 public:
@@ -22,6 +23,7 @@ private:
 class WallpaperManager
 {
 	std::string wallpaperCollectionPath;
+	std::set<std::string> wallpaperPaths;
 	int monitorCnt;
 
 	int getMonitorCnt();
@@ -29,6 +31,8 @@ class WallpaperManager
 public:
 	WallpaperManager(std::string path);
 	~WallpaperManager();
+
+	void nextWallpaper();
 
 };
 

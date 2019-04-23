@@ -3,7 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#include <vector>
+#include <windows.h>
 #include "WallpaperManager.h"
 
 
@@ -15,5 +15,9 @@ int main() {
 	std::cin >> wallpaperCollectionPath;
 	WallpaperManager wallpaperManager(wallpaperCollectionPath);
 
+	while (true) {
+		wallpaperManager.nextWallpaper();
+		Sleep(5000);
+	}
 	return 0;
 }
